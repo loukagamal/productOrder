@@ -1,0 +1,28 @@
+.order-details {
+  padding: 1rem;
+
+  h2 {
+    margin-top: 1rem;
+    color: #333;
+  }
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f4f4f4;
+    }
+  }
+}

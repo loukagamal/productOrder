@@ -1,0 +1,35 @@
+<div class="order-details">
+    <h2>Order Details</h2>
+    <p><strong>Order ID:</strong> {{ order?.OrderId }}</p>
+    <p><strong>Order Date:</strong> {{ order?.OrderDate | date: 'medium' }}</p>
+    <p><strong>Payment Method:</strong> {{ order?.PaymentType }}</p>
+  
+    <h2>Customer Details</h2>
+    <p *ngIf="customer">
+      <strong>Name:</strong> {{ customer.Name }}<br />
+      <strong>Email:</strong> {{ customer.Email }}<br />
+      <strong>Phone:</strong> {{ customer.Phone }}<br />
+      <strong>Address:</strong> {{ customer.Address }}
+    </p>
+  
+    <h2>Products</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of orderProducts">
+          <td>{{ item.product.ProductName }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.product.ProductPrice | currency: 'USD' }}</td>
+          <td>{{ item.subtotal | currency: 'USD' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

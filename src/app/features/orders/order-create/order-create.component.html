@@ -1,0 +1,32 @@
+<div class="order-create">
+    <h2>Create New Order</h2>
+  
+    <div class="selected-products">
+      <h3>Selected Products</h3>
+      <ul>
+        <li *ngFor="let item of selectedProducts">
+          {{ item.product.ProductName }} - {{ item.quantity }} pcs
+        </li>
+      </ul>
+    </div>
+  
+    <div class="customer-details">
+      <h3>Customer Details</h3>
+      <input type="text" [(ngModel)]="customer.name" placeholder="Full Name *"  required/>
+      <input type="email" [(ngModel)]="customer.email" placeholder="Email *" required />
+      <input type="text" [(ngModel)]="customer.phone" placeholder="Phone *" required/>
+      <input type="text" [(ngModel)]="customer.address" placeholder="Address *"  required />
+    </div>
+  
+    <div class="payment-method">
+      <h3>Payment Method</h3>
+      <select [(ngModel)]="paymentMethod">
+        <option value="Cash">Cash</option>
+        <option value="Online">Online</option>
+      </select>
+    </div>
+  
+    <button (click)="submitOrder()">Submit Order</button>
+    
+  </div>
+  

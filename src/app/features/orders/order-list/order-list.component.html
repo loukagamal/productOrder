@@ -1,0 +1,21 @@
+<div class="order-list">
+    <table>
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Order Date</th>
+          <th>Total Price</th>
+          <th>Payment Method</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.OrderId }}</td>
+          <td>{{ order?.OrderDate | date: 'medium' }}</td>
+          <td>{{ calculateTotal(order) | currency: 'USD' }}</td>
+          <td>{{ order.PaymentType }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
